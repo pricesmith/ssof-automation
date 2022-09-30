@@ -5,6 +5,7 @@ from datetime           import datetime
 from airflow            import DAG
 from airflow.decorators import dag, task
 from airflow.providers.docker.operators.docker import DockerOperator
+from workflows.http     import nvd_client
 
 DAG_ID          = os.path.basename(__file__).replace('.pyc', '').replace('py', '')
 DAG_OWNER_NAME  = 'airflow'
@@ -39,12 +40,28 @@ def nvd_etl():
 
     @task()
     def extract():
+        """
+        In RDF, you have "Entities (Nodes) and Properties (Edges).
+
+        When we extract data that we intend to map into RDF Triples, 
+        we are also extracting what will eventually be mapped into these 
+        RDF 'Resources' (Resource is the encapsulating term for both Entities and Triples).
+        """
+        # nvd.get_all_vulnerabilities()
+        # nvd.get_all_products()
+        # mitre.get_all_resources() -- # Not to be confused with RDF Resources
         pass
 
     @task()
     def transform():
+        # rdf.map_to_triples()
         pass
 
     @task()
     def load():
+        """
+        In this case, we'll load the data in parallel-
+            - the original data to a Postgres database,
+            - and the newly formed triples to a triplestore!
+        """
         pass
