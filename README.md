@@ -2,6 +2,10 @@
 
 ## Problem Space
 
+### 
+
+## Conditions that Need to Be Met
+
 ## Service / Workflow Architectural Components
 The core of this app, as is the core of a behemoth multitude of workflow automation apps and services, is Apache Airflow. 
 - Particularly in infosec and security automation
