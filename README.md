@@ -2,9 +2,8 @@
 
 ## Problem Space / Context?
 
-Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, and probably somewhat globally, underappreciate the extent to which our handling and interpretation of, and our synthesis with data influences and affects decision-making. The tools we've come to use to deal with data on the whole aims to serve efficiency and velocity while we essentially try to hold on and follow suit. 
+Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, and probably somewhat globally, underappreciate the extent to which our handling and interpretation of, and our synthesis with data influences and affects decision-making. The tools we've come to use to deal with data aims, on the whole, to serve efficiency and velocity while giving the an exaggerated notion of insight, meaning, and value. The notion of the topology of data, insight, and knowledge more or less becomes hidden and buried in the mix. Solutions to this circumstances are not radical alternatives [but] as much as they are ... 
 
-make data has had much more effect on [information?] velocity than 
 
 Working with Airflow given my previous heavy interest in semantic data...
 
