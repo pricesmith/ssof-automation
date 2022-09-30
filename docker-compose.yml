@@ -21,14 +21,14 @@ services:
         io.github.pricesmith.dockerfile: src/Dockerfile
         io.github.pricesmith.vcs-type: Git
 
-  netshell:
+  troubleshooter:
     <<: *app
     entrypoint: /bin/bash
-    cap_add:  # some net utils require enhanced privileges
+    cap_add:
       - NET_ADMIN
       - SYS_ADMIN
 
-  pylint:
+  linter:
     <<: *app
     entrypoint: /opt/app/pylint
 
