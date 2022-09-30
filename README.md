@@ -1,8 +1,12 @@
 # ssof-automation
 
-## Problem Space
+## Problem Space / Context?
 
-Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, almost globally, underappreciate how much our handling and interpretation of, and our synthesis with data influences and affects our decision-making.
+Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, and probably somewhat globally, underappreciate the extent to which our handling and interpretation of, and our synthesis with data influences and affects decision-making. The tools we've come to use to deal with data on the whole aims to serve efficiency and velocity while we essentially try to hold on and follow suit. 
+
+make data has had much more effect on [information?] velocity than 
+
+Working with Airflow given my previous heavy interest in semantic data...
 
 Companies, institutions, people spend lots of time and effort gathering and structuring somewhat reliable data, and the methods we decide to employ in order to wrangle it largely go against what information lies in their original structure.
 
