@@ -1,11 +1,11 @@
 # ssof-automation
 
-## Problem Space / Context?
+## Problem Space & Context
 
-Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, and probably somewhat globally, underappreciate the extent to which our handling and interpretation of, and our synthesis with data influences and affects decision-making. The tools we've come to use to deal with data aims, on the whole, to serve efficiency and velocity while giving the an exaggerated notion of insight, meaning, and value. The notion of the topology of data, insight, and knowledge more or less becomes hidden and buried in the mix. Solutions to this circumstances are not radical alternatives [but] as much as they are ... 
+Despite how quickly technologies can evolve within even a single company, an organization very often becomes and remains somewhat tunnel-visioned on the technical progress itself while unknowingly bound to the tools and processes already in place, even when these tools and processes in one way or another revolve around flexibility, embracing change, rapid development, things of the like. The practices, and procedures imposed on our approach to data in rapidly moving environments often impose a structure that is stubborn in its direction and rigid in its space. In stronger words, it is largely, and likely somewhat globally, habitually underappreciate the extent to which our handling of, interpretation of, and synthesis with data influences and affects decision-making in countless domains. Perhaps not by some astronomical amount, but certianly by an highly non-negligible amount. The tools companies have come to use to deal with data aims, on the whole, to serve only efficiency and velocity while giving an exaggerated notion of insight, meaning, and value through [adj] solutions. Above all, notions of any topological relationship between data, insight, and knowledge gets buried considerably in the backlog.
 
+"Solutions" to this relationship are not radical alternatives to current tool chains if any alternative at all. They are simply foundations on which these things can operate.
 
-Working with Airflow given my previous heavy interest in semantic data...
 
 Companies, institutions, people spend lots of time and effort gathering and structuring somewhat reliable data, and the methods we decide to employ in order to wrangle it largely go against what information lies in their original structure.
 
