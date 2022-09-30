@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""
+SSOF-Automation
+
+Overview:
+    Bare-bones structure of application
+"""
+from local.cmdline import Cmdline
+from local.env import DEBUG
+
+
+def main():
+    """
+    def main()
+
+    Overview:
+        Lorem ipsum sit amet
+    """
+
+if __name__ == "__main__":
+    # initialize program
+    main()
