@@ -4,7 +4,11 @@
 
 Despite how quickly technologies can evolve within even a single company, an organization very often becomes and remains somewhat tunnel-visioned on the technical progress itself while unknowingly bound to the tools and processes already in place, even when these tools and processes in one way or another revolve around flexibility, embracing change, rapid development, things of the like. The practices, and procedures imposed on our approach to data in rapidly moving environments often impose a structure that is stubborn in its direction and rigid in its space. In stronger words, it is largely, and likely somewhat globally, habitually underappreciate the extent to which our handling of, interpretation of, and synthesis with data influences and affects decision-making in countless domains. Perhaps not by some astronomical amount, but certianly by an highly non-negligible amount. The tools companies have come to use to deal with data aims, on the whole, to serve only efficiency and velocity while giving an exaggerated notion of insight, meaning, and value through [adj] solutions. Above all, notions of any topological relationship between data, insight, and knowledge gets buried considerably in the backlog.
 
-"Solutions" to this relationship are not radical alternatives to current tool chains if any alternative at all. They are simply foundations on which these things can operate.
+## Conditions that SHOULD to be met
+
+<!-- A recognition that data often has more semantic value before it rockets into processing and interpretation land is the launchpad for any discussion on or demonstration of how to  -->
+A solution is not being proposed ...
+"Solutions" to this relationship are not radical alternatives to any current tool chain. They  They are simply foundations on which these things can operate.It is neither new nor niche, just not realized to its full potential in many domains. 
 
 
 Companies, institutions, people spend lots of time and effort gathering and structuring somewhat reliable data, and the methods we decide to employ in order to wrangle it largely go against what information lies in their original structure.

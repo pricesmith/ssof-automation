@@ -3,8 +3,8 @@
 import requests
 import pandas as pd
 import logging
-# import vcrpy
-# import pytest
+
+from resources.endpoints import CPES_BASE_URL_V2, CVES_BASE_URL_V2
 
 """
 As per NVD.NIST.GOV:
