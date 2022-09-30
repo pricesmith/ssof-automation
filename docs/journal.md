@@ -31,3 +31,25 @@
 #### 23:01 PST
 
 - Learning a lot about NIST, NVE Database, and KEVs. Interested in possible data dransformations. Though I should certainly focus on exraction first. 
+
+#### 23:14 PST
+
+- Interested in the NIST NVE/KEV Database. Going to review Problem Space parameters (assumptions, use cases, consumers). If good, will start filling out the few resources being up until this point... other than eye strain.
+
+#### 00:24 PST
+
+- Got very tired and took a big walk. Wrote some notes on my phone that I will add shortly.
+
+#### 02:00 PST
+
+- Remembering more python. Slightly more sure of what I'd like to do with this... realistically.
+- Remembering I can always do more with it later if it truly tickles my fancy.
+
+#### 02:58 PST
+
+- Excited about what these data sets offer. Going to lightly refactor the http client, document a bit more, and start working on the db impl. I'll likely go with DuckDB. I've always wanted to experiment with it, and it's optimized for OLAP data processing -- good for multidimensional analysis on large datasets. But first, a walk.
+
+#### 03:30 PST
+
+- Back from walk. Less do this.
+- Refactoring http client, adding more in-line and readme documentation, setting up the db container and working with each api's schema.
