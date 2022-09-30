@@ -1,11 +1,28 @@
 # ssof-automation
 
 ## Problem Space
-  
+
+Despite how quickly technologies can evolve within even a single company, we still all too often become and remain somewhat tunnel-visioned on the progress itself unknowingly bound to the tools and processes already in place, even when these tools and processes revolve around rapid development and rapid evolution. The philosophies, practices, and procedures imposed on our approach to data in rapidly moving environments is, more often than not, nothing different. In some slightly stronger words, we largely, almost globally, underappreciate how much our handling and interpretation of, and our synthesis with data influences and affects our decision-making.
+
+Companies, institutions, people spend lots of time and effort gathering and structuring somewhat reliable data, and the methods we decide to employ in order to wrangle it largely go against what information lies in their original structure.
+
+- plethora of structured, and semi-structured data
+- silo'd
+
+## -
+
+Serve as a great example of what kind of models can come out of such a strong bedding.
+
+- NVD's and MITRE's datasets interested me in their interoperability (in obvious addition to sheer size).
+
+As someone who wants to learn, I prefer tinkering myself
+
 - massive amounts of data
-- similarly structuresd
+- similarly structured
 - similar domains
 - makes it an easy candidate for graph processing*
+
+To notify, inform solutions, to build off of.
 
 ## Goals
 
@@ -30,7 +47,7 @@ The core of this app, as is the core of a behemoth multitude of workflow automat
 
 - Particularly in infosec and security automation
   1. Centralized workflow and logging
-- giving way to centralized monitoring, efficient observability and monitoring. 
+- giving way to centralized monitoring, efficient observability and monitoring.
 
 ## Package structure
 

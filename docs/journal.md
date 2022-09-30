@@ -53,3 +53,7 @@
 
 - Back from walk. Less do this.
 - Refactoring http client, adding more in-line and readme documentation, setting up the db container and working with each api's schema.
+
+#### 05:28 PST
+
+- Using willpower to shift focus from reading/code to comprehensive documentation.
