@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -eEu
+set -o pipefail
+
+#######################################################################
+##### Define the packages which should be present on calling host #####
+#######################################################################
+
+. cicd/environment.sh
+. cicd/functions.sh
+
+# which packages to check for?
+PACKAGES=()
+UNINSTALLED_PACKS=()
+MISSING=0
+
+for $package in "${PACKAGES[@]}"; do
+	if [[ ! `command -v $package` ]]; then
+		UNINSTALLED_PACKS+=("$package")
+		MISSING=1
+	fi
+done
+
+if [[ $MISSING -eq 1 ]]; then
+	echo "$err Please install the following packages before continuing:"
+	echo "$UNINSTALLED_PACKS"
+	exit(1)
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eEu
+set -o pipefail
+
+. cicd/environment.sh
+. cicd/functions.sh
