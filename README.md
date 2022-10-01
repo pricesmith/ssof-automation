@@ -4,11 +4,17 @@
 
 Data pipelining tools offer a lot of flexibility but have trouble merging disparate data sources and gaining data insight from successfully doing so. The more data sources you have, the more difficult and resource intensive it is to merge.
 
+### Additional Context Considerations
+
+This project, at least at the moment, is primarily for the purposes of learning, showing competency of, apache airflow and related technologies while exploring prior unexplored domains and tooling in the InfoSec space.
+
 ## Offered Solution
 
 Brief: RDF is a specification for a simple data model that consists only of a Subject, Predicate, and an Object-- e.g:
 ```<ex:App_Foo> <ex:has_software_dependency> <ex:Log4J_v1.2>```
-where 'ex:' is a namespace specifier. The three-part model allows for rigid ontological and topological constraints in the form of first order logic axioms. These constrants ensure that the model is correct. Though more importantly, the constraints ensure the model has semantic value that can be explored and analyzed with tremendous depth. Thus, it is worth harnessing the power of both more commonly used data stores in parallel with RDF stores (also referred to as Triple Stores) anywhere one might need to merge, analyze, and flexibly query large amounts of data. 
+where 'ex:' is a namespace specifier. The three-part model allows for rigid ontological and topological constraints in the form of first order logic axioms. These constrants ensure that the model is correct. Though more importantly, the constraints ensure the model has semantic value that can be explored and analyzed with tremendous depth. Thus, it is worth harnessing the power of both more commonly used data stores in parallel with RDF stores (also referred to as Triple Stores) anywhere one might need to merge, analyze, and flexibly query large amounts of data.
+
+Companies leveraging semantic data technologies into their data workflows and discovery processes...
 
 Despite how quickly technologies can evolve within company, an organization very often becomes and remains somewhat tunnel-visioned on the technical progress itself while unknowingly bound to the tools and processes already in place, even when these tools and processes in one way or another revolve around flexibility, embracing change, rapid development, things of the like. The practices, and procedures imposed on our approach to data in rapidly moving environments often impose a structure that is stubborn in its direction and rigid in its space. In stronger words, it is largely, and likely somewhat globally, habitually underappreciate the extent to which our handling of, interpretation of, and synthesis with data influences and affects decision-making in countless domains. Perhaps not by some astronomical amount, but certianly by an highly non-negligible amount. The tools companies have come to use to deal with data aims, on the whole, to serve only efficiency and velocity while giving an exaggerated notion of insight, meaning, and value through [adj] solutions. Above all, notions of any topological relationship between data, insight, and knowledge gets buried considerably in the backlog.
 

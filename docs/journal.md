@@ -1,10 +1,14 @@
-#
+# dev journal
+
+## 2022/
+
+### 09/29
 
 #### 21:01 PST
 
 - sifting through actionable solution proposals to any given problem-space in fintech cybersec.
 
-#### 21:26 PST
+#### 29 | 21:26 PST
 
 - continuing work on narrowing down a problem space while considering particular technologies I both enjoy and believe are highy under-utilized for the flexibility of solution-tooling they offer -- will elaborate. 
 
@@ -18,7 +22,7 @@
 
 #### 22:18 PST
 
-- Continue to glance at Ontology based security technologies. Whether I have enough time to sift through, transform, and load pertinent data into a triplestore is probably less of an issue than continuing to ensure that I keep to a solid problem space. Currently, I'm leaning toward at least starting by consolidating compromised software and software components/libraries/tools that would likely inform expedient updates. 
+- Continue to glance at Ontology based security technologies. Whether I have enough time to sift through, transform, and load pertinent data into a triplestore is probably less of an issue than continuing to ensure that I keep to a solid problem space. Currently, I'm leaning toward at least starting by consolidating compromised software and software components/libraries/tools that would likely inform expedient updates.
 
 #### 22:48 PST
 
@@ -35,6 +39,8 @@
 #### 23:14 PST
 
 - Interested in the NIST NVE/KEV Database. Going to review Problem Space parameters (assumptions, use cases, consumers). If good, will start filling out the few resources being up until this point... other than eye strain.
+
+### 09/30
 
 #### 00:24 PST
 
@@ -61,3 +67,13 @@
 #### 07:59 PST
 
 - Writing is slowing down due to overelaboration.
+
+### 10/01
+
+#### 11:31 PST
+
+- Some re-evaluation. Re-breaking things down. Cleaning up documentation. Will update.
+
+#### 13:06 PST
+
+- Documenting CVE API taking forever. Will still need to reformat and refactor a bit.
