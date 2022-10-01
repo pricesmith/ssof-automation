@@ -76,4 +76,8 @@
 
 #### 13:06 PST
 
-- Documenting CVE API taking forever. Will still need to reformat and refactor a bit.
+- Documenting CVE API taking forever. Will still need to reformat and refactor a bit. Will leave for a later time.
+
+#### 13:27 PST
+
+- also finding myself overwhelmed with "possibilities" and "todos" that I would like to document and/or add. This is a huge reason I enjoy working with others, granted, this is a fairly open ended project whose goals are not properly defined other than show competence in Airflow, Docker, DockerOperator, CI/CD, and to explore the InfoSec world a bit (that last one is my own goal).

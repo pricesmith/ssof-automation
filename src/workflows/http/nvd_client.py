@@ -15,6 +15,14 @@ The CVE and CPE APIs are the preferred method for staying up to date with the NV
 The CVE API is used to easily retrieve information on a single CVE or a collection of CVE 
 from the NVD. The NVD contains more than 190,000 CVE. Because of this, its APIs enforce 
 offset-based pagination to answer requests for large collections. Through a series of smaller “chunked” responses controlled by an offset 'startIndex' and a page limit 'resultsPerPage' users may page through all the CVE in the NVD.
+
+    Important considerations:
+        The best, most efficient, practice for keeping up to date with the NVD is to use the date range 
+        parameters to request only the CVEs that have been modified since your last request.
+
+        It is recommended that users of the CVE API use the default resultsPerPage value. 
+        This value has been optimized to allow the greatest number of results over the fewest number of requests.
+
 ----------------
     CPE API
 ----------------
@@ -26,7 +34,7 @@ The CPE API is used to easily retrieve information on a single CPE record or a c
 # For flexibility, we can allow an argument to be passed to change API versions.
 # The rest revolves around how clean the client itself is to work with. 
 
-"""API Wrapper for NVD data APIs"""
+"""API Wrapper for NVD Data APIs"""
 class Nvd():
 
     def __init__(self):
@@ -44,6 +52,33 @@ class Nvd():
 
         Params & Filters:
         ----
+        resultsPerPage
+            {page limit}
+            Query Param: 'resultsPerPage='
+        
+            # This parameter specifies the maximum number of CVE records to be returned 
+            # in a single API response. For network considerations, the default value and 
+            # maximum allowable limit is 2,000.
+        ----
+        startIndex
+            {offset}
+            Query Param: 'startIndex='
+            
+            # This parameter specifies the index of the first CVE to be returned in the response data. 
+            # The index is zero-based, meaning the first CVE is at index zero.
+            #
+            # The CVE API returns four primary objects in the response body that are used for pagination: 
+                # resultsPerPage, startIndex, totalResults, and vulnerabilities. 
+                    # totalResults indicates the total number of CVE records that match the request parameters. 
+                    # If the value of totalResults is greater than the value of resultsPerPage, 
+                    # there are more records than could be returned by a single API response and additional 
+                    # requests must update the startIndex to get the remaining records.
+            #
+            # !! The best, most efficient, practice for keeping up to date with the NVD is to use the date range 
+            # parameters to request only the CVEs that have been modified since your last request.
+            #
+            # It is recommended that users of the CVE API use the default resultsPerPage value. 
+            # This value has been optimized to allow the greatest number of results over the fewest number of requests.
         cpeName
             {name}
             Query Param: 'cpeName='
@@ -218,7 +253,37 @@ class Nvd():
             # parameters is 120 consecutive days.
                 # Values must be entered in the extended ISO-8061 date/time format:
                     # [YYYY][“-”][MM][“-”][DD][“T”][HH][“:”][MM][“:”][SS][Z]
-                        # The "T" is a literal to separate the date from the time. The Z indicates an optional offset-from-UTC. Please note, if a positive Z value is used (such as +01:00 for Central European Time) then the "+" should be encoded in the request as "%2B". The user agent may handle this automatically.
+                        # The "T" is a literal to separate the date from the time. 
+                        # The Z indicates an optional offset-from-UTC. 
+                        # Please note, if a positive Z value is used (such as +01:00 for 
+                        # Central European Time) then the "+" should be encoded in the request as "%2B". 
+                        # The user agent may handle this automatically.
+        ----
+        sourceIdentifier
+            {sourceIdentifier}
+            Query Param: 'sourceIdentifier'
+
+            # This parameter returns CVE where the exact value of {sourceIdentifier} appears as a data source 
+            # in the CVE record. The CVE API returns {sourceIdentifier} values within the descriptions object. 
+            # The Source API returns detailed information on the organizations that provide the data contained 
+            # in the NVD dataset, including every valid {sourceIdentifier} value.
+        ----
+        virtualMatchString
+            {cpe match string}
+            Query Param: 'virtualMatchString='
+
+            # This parameter filters CVE more broadly than cpeName. The exact value of {cpe match string} is 
+            # compared against the CPE Match Criteria present on CVE applicability statements.
+            #
+            # CPE Match Criteria comes in two forms: CPE Match Strings and CPE Match String Ranges. 
+            # Both are abstract concepts that are then correlated to CPE URIs in the Official CPE Dictionary. 
+            # Unlike a CPE Name, match strings and match string ranges do not require a value in the part, 
+            # vendor, product, or version components. The CVE API returns CPE Match Criteria within the 
+            # configurations object.
+            #
+            # Please note, CPE Match String Ranges are not supported by the virtualMatchString. 
+            # cpeName is a simpler alternative for many use cases. When both cpeName and virtualMatchString 
+            # are provided, only the cpeName is used.
     """
     
     def get_all_cves_for_given_cpe_name(cpe_name):

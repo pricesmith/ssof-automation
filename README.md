@@ -56,7 +56,14 @@ To notify, inform solutions, to build off of.
 
 ## Mini WBS
 
-- [ ] Create single api dag run
+1. [ ] Create single api dag run
+
+## TODOs
+
+- [ ] Reformat CVE Documentation
+  - Will act as better baseline for future api/service client documentation
+- [ ] Add functionality to keep track of latest NVD CVE/CPE request
+  - This will allow future requests to autopopulate with data that has been updated since.
 
 ### Technologies
 
