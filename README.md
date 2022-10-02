@@ -1,5 +1,16 @@
 # ssof-automation
 
+## Overview
+
+Airflow serves a multitude of purposes. Here, I explore different usecases while solidifying my understanding of the toolset and its extensibility.
+
+This codebase began with a hyper-focus on one particular use case I found interesting--
+
+### DAGs You Will Find
+
+- update vulns
+- 
+
 ## Context
 
 Data pipelining tools offer a lot of flexibility but have trouble merging disparate data sources and gaining data insight from successfully doing so. The more data sources you have, the more difficult and resource intensive it is to merge.
@@ -80,6 +91,10 @@ The core of this app, as is the core of a behemoth multitude of workflow automat
 ## Package structure
 
 While conceptualizing, prototyping, and iterating over any solution implementations within a given problem-space, the simplest implementations are often most self-advised. This way, I can focus on a larger idea without losing bandwidth in any attemps to perfect some component implementation.
+
+### Questions
+
+- why "wordkflows" instead of tasks?
 
 ### Ontologies
 

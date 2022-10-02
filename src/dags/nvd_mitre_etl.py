@@ -1,5 +1,5 @@
 import os
-import airflow
+import json
 from os                 import getenv
 from datetime           import datetime
 from airflow            import DAG
@@ -13,6 +13,11 @@ USER_EMAIL      = 'psmith.code@gmail.com'
 DOCKER_IMAGE    = ''
 DEBUG           = getenv('DEBUG', False)
 LOG_LEVEL       = getenv('LOG_LEVEL', 'info')
+
+def _extract_vulns():
+    vulns_string = '{vuln1, vuln2, vuln3m, vuln4, vuln5}'
+    order_vulns_dict = json.loads(vulns_string)
+    return order_vulns_dict
 
 default_args = {
     'owner'             : DAG_OWNER_NAME,
@@ -32,14 +37,16 @@ default_args = {
     catchup             = False,
     tags = ['NVD, Vulnerabilities', 'Products']
 )
-def nvd_etl():
+def update_nvd_vulns_etl():
     """
     ### NVD ETL Process Documentation
 
     """
 
-    @task()
+    @task('extract_vulnerabilities', retries = 2)
     def extract():
+
+
         """
         In RDF, you have "Entities (Nodes) and Properties (Edges).
 

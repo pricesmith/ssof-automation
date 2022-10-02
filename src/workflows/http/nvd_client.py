@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 
+import json
 import requests
-import pandas as pd
 import logging
+from datetime import datetime
 
-from resources.endpoints import CPES_BASE_URL_V2, CVES_BASE_URL_V2
+# from resources.endpoints import CPES_BASE_URL_V2, CVES_BASE_URL_V2
+
+# save req and iso_dt to db
 
 """
 As per NVD.NIST.GOV:
@@ -33,6 +36,14 @@ The CPE API is used to easily retrieve information on a single CPE record or a c
 # Most of should be pretty apparent. As for the rest, and for example:
 # For flexibility, we can allow an argument to be passed to change API versions.
 # The rest revolves around how clean the client itself is to work with. 
+
+CVES_BASE_URL_V2 = 'https://services.nvd.nist.gov/rest/json/cves/2.0'
+CPES_BASE_URL_V2 = 'https://services.nvd.nist.gov/rest/json/cpes/2.0'
+
+def write_json_to_file(data, filename):
+    with open(filename, 'w') as file:
+        json_string = json.dumps(data)
+        file.write(json_string)
 
 """API Wrapper for NVD Data APIs"""
 class Nvd():
@@ -288,12 +299,52 @@ class Nvd():
     
     def get_all_cves_for_given_cpe_name(cpe_name):
         q = CVES_BASE_URL_V2 + '?cpeName=' + cpe_name
+
         res = requests.get(q)
-        df = pd.read_json(res.json())
-        df.to_csv('../data/{self.cpe_name}_cves.csv', index = None)
+        res_json = res.json()
 
+        df = pd.json_normalize(res_json)
 
+        write_json_to_file(res_json, f'{cpe_name}.json')
 
-nvd_api = Nvd.get_all_cves_for_given_cpe_name(
+        print(df.head())
+
+        # write_json_to_file(res_json, 'test.json')
+
+        # df = pd.read_json(res_json)
+        # print(df.to_json())
+        # df.to_csv('../tmp/data/{self.cpe_name}_cves.csv', index = None)
+
+    def search_cves_by_keyword(keyword):
+        q = CVES_BASE_URL_V2 + '?keywordSearch=' + keyword
+
+        res = requests.get(q)
+        res_json = res.json()
+
+        # df = pd.DataFrame(pd.json_normalize(res_json))
+
+        # print(df.head())
+        
+
+        # write_json_to_file(res_json, f'{keyword}.json')
+
+    def get_updated_cves():
+        # get_last_cve_request
+        pass
+
+def iso_datetime():
+    """
+    NVD datetimes support only ISO 8601 formats with microsecond precision to three decimal places
+    """
+    precision = 3
+    iso_dt = datetime.now().isoformat('T')
+    us = str(iso_dt.microsecond)
+    f = us[:precision] if len(us) > precision else us
+    return "%d-%d-%d %d:%d:%d.%d" % (
+        iso_dt.year, iso_dt.month, iso_dt.day, iso_dt.hour, iso_dt.minute, iso_dt.second, int(f)
+    )
+
+# Nvd.search_cves_by_keyword('log4j')
+Nvd.get_all_cves_for_given_cpe_name(
     "cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*"
 )
