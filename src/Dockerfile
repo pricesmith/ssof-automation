@@ -29,7 +29,7 @@ RUN apk add --no-cache \
 COPY requirements.txt /opt/app/
 RUN pip3 install --no-cache-dir -r /opt/app/requirements.txt
 
-# install app into the appropriate place
+# install app into the app-propriate place :D
 COPY . /opt/app/
 
-ENTRYPOINT ["/opt/app/entrypoint"]
+ENTRYPOINT ["/opt/app/entrypoint.py"]
