@@ -81,3 +81,11 @@
 #### 13:27 PST
 
 - also finding myself overwhelmed with "possibilities" and "todos" that I would like to document and/or add. This is a huge reason I enjoy working with others, granted, this is a fairly open ended project whose goals are not properly defined other than show competence in Airflow, Docker, DockerOperator, CI/CD, and to explore the InfoSec world a bit (that last one is my own goal).
+
+### 10/02
+
+#### 13:41 PST
+
+- Burnout with trying to concoct solution for one use case.
+- Instead, I'm going to opt to make a library of smaller dags to simple iterate over creating in airflow.
+- Will have to delete most of the readme as it currently stands.
