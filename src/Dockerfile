@@ -6,6 +6,30 @@ RUN apk add --no-cache \
 	python3-dev \
 	&& :
 
+# Install Airflow dependencies and tools
+RUN apk add --no-cache \
+    wget \
+    libczmq-dev \
+    curl \
+    libssl-dev \
+    git \
+    inetutils-telnet \
+    bind9utils freetds-dev \
+    libkrb5-dev \
+    libsasl2-dev \
+    libffi-dev libpq-dev \
+    freetds-bin build-essential \
+    default-libmysqlclient-dev \
+    apt-utils \
+    rsync \
+    zip \
+    unzip \
+    gcc \
+    g++ \
+    vim \
+    locales \
+    && :
+
 # install packages specifically related to network troubleshooting
 RUN apk add --no-cache \
 	-X http://dl-cdn.alpinelinux.org/alpine/edge/main \
