@@ -6,6 +6,31 @@ RUN apk add --no-cache \
 	python3-dev \
 	&& :
 
+# Install Airflow dependencies and tools
+RUN apt-get update -yqq && \
+    apt-get upgrade -yqq && \
+    apt-get install -yqq --no-install-recommends \ 
+    wget \
+    libczmq-dev \
+    curl \
+    libssl-dev \
+    git \
+    inetutils-telnet \
+    bind9utils freetds-dev \
+    libkrb5-dev \
+    libsasl2-dev \
+    libffi-dev libpq-dev \
+    freetds-bin build-essential \
+    default-libmysqlclient-dev \
+    apt-utils \
+    rsync \
+    zip \
+    unzip \
+    gcc \
+    vim \
+    locales \
+    && apt-get clean
+
 # install packages specifically related to network troubleshooting
 RUN apk add --no-cache \
 	-X http://dl-cdn.alpinelinux.org/alpine/edge/main \
@@ -24,10 +49,18 @@ RUN apk add --no-cache \
 	traceroute \
 	&& :
 
+# Airflow build and setup Args
+ARG AIRFLOW_VERSION=2.4.1
+ARG AIRFLOW_HOME=/opt/airflow
+
+# Export the environment variable AIRFLOW_HOME where airflow will be installed
+ENV AIRFLOW_HOME=${AIRFLOW_HOME}
 
 # Install the requirements
-COPY requirements.txt /opt/app/
-RUN pip3 install --no-cache-dir -r /opt/app/requirements.txt
+RUN PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+RUN wget https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt
+COPY constraints.txt /opt/app/
+RUN pip3 install apache-airflow[celery, docker] --no-cache-dir -r /opt/app/constraints.txt
 
 # install app into the app-propriate place :D
 COPY . /opt/app/
