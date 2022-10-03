@@ -1,0 +1,17 @@
+---
+name: "cicd"
+on:     # yamllint disable-line rule:truthy
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  cicd:
+    runs-on: self-hosted
+    steps:
+      - name: prep
+        run: cicd/prep
+      - name: build
+        run: cicd/build
+      - name: test
+        run: cicd/test

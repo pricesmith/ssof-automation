@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+import os
+
+##########
+# PYLINT #
+##########
+
+# get path of current dir
+path = os.getcwd()
+
+# get list of files and directories of current dir 
+dir_list = []
+files_and_dirs = os.listdir(path)
+
+# get subdirectories of the top-level directory
+# one layer deep
+for file in files_and_dirs:
+    d = os.path.join(path, file)
+    if os.path.isdir(d):
+        dir_list.append(os.listdir(d))
+dir_list.append(files_and_dirs)
+
+
+# get list of py files in current dir
+for dirname in dir_list:
+    for file in dirname:
+        if file.endswith(".py"):
+            # run pylint on python files
+            os.system(f"python3 -m pylint {file}")

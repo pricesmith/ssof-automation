@@ -5,3 +5,5 @@ set -o pipefail
 
 . cicd/environment.sh
 . cicd/functions.sh
+
+docker-compose run linter

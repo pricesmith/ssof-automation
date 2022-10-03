@@ -17,6 +17,35 @@ RUN apk add --no-cache \
 	python3-dev \
 	&& :
 
+<<<<<<< HEAD
+=======
+# Install Airflow dependencies and tools
+RUN apk add --no-cache \
+    wget \
+    gcc \
+    g++ \
+    zlib-dev \
+    libffi-dev \
+    openssl-dev \
+    musl-dev \
+    libczmq-dev \
+    libssl-dev \
+    git \
+    inetutils-telnet \
+    bind9utils freetds-dev \
+    libkrb5-dev \
+    libsasl2-dev \
+    libffi-dev libpq-dev \
+    freetds-bin build-essential \
+    default-libmysqlclient-dev \
+    rsync \
+    zip \
+    unzip \
+    vim \
+    locales \
+    && :
+
+>>>>>>> ef4e897f40d15fd5df2a45965b690cf51428e7d2
 # install packages specifically related to network troubleshooting
 RUN apk add --no-cache \
 	-X http://dl-cdn.alpinelinux.org/alpine/edge/main \
@@ -46,7 +75,7 @@ ENV AIRFLOW_HOME=${AIRFLOW_HOME}
 COPY requirements.txt /opt/app/
 RUN pip3 install --no-cache-dir -r /opt/app/requirements.txt
 
-# install app into the appropriate place
+# install app into the app-propriate place :D
 COPY . /opt/app/
 
-ENTRYPOINT ["/opt/app/entrypoint"]
+ENTRYPOINT ["/opt/app/entrypoint.py"]
