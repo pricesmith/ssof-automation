@@ -9,7 +9,7 @@ This codebase began with a hyper-focus on one particular use case I found intere
 ### DAGs You Will Find
 
 - update vulns
-- 
+-
 
 ## Context
 
@@ -18,6 +18,18 @@ Data pipelining tools offer a lot of flexibility but have trouble merging dispar
 ### Additional Context Considerations
 
 This project, at least at the moment, is primarily for the purposes of learning, showing competency of, apache airflow and related technologies while exploring prior unexplored domains and tooling in the InfoSec space.
+
+## Would love to continue some of these builds
+
+### WORKFLOW of main interest
+
+- create hub and spoke onto architecture
+- create ontos for apis
+- connect retrieved data through ontos in triplestore
+
+### APIs of Interest
+
+<!-- <https://github.com/jaegeral/security-apis> -->
 
 ## Offered Solution
 
@@ -33,8 +45,7 @@ Despite how quickly technologies can evolve within company, an organization very
 
 <!-- A recognition that data often has more semantic value before it rockets into processing and interpretation land is the launchpad for any discussion on or demonstration of how to  -->
 A solution is not being proposed ...
-"Solutions" to this relationship are not radical alternatives to any current tool chain. They  They are simply foundations on which these things can operate.It is neither new nor niche, just not realized to its full potential in many domains. 
-
+"Solutions" to this relationship are not radical alternatives to any current tool chain. They  They are simply foundations on which these things can operate.It is neither new nor niche, just not realized to its full potential in many domains.
 
 Companies, institutions, people spend lots of time and effort gathering and structuring somewhat reliable data, and the methods we decide to employ in order to wrangle it largely go against what information lies in their original structure.
 

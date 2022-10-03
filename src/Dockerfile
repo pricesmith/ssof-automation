@@ -19,6 +19,7 @@ RUN apk add --no-cache \
 
 # Install Airflow dependencies and tools
 RUN apk add --no-cache \
+	build-base \
     wget \
     gcc \
     g++ \
@@ -26,6 +27,13 @@ RUN apk add --no-cache \
     libffi-dev \
     openssl-dev \
     musl-dev \
+	krb5-conf \
+	krb5-dev \
+	krb5-libs \
+	cmake \
+	mysql-client \
+	mariadb-client \
+	mariadb-dev \
     git \
     inetutils-telnet \
     freetds-dev \
