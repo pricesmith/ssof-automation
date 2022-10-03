@@ -27,6 +27,7 @@ RUN apt-get update -yqq && \
     zip \
     unzip \
     gcc \
+    g++ \
     vim \
     locales \
     && apt-get clean
