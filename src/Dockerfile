@@ -7,9 +7,7 @@ RUN apk add --no-cache \
 	&& :
 
 # Install Airflow dependencies and tools
-RUN apt-get update -yqq && \
-    apt-get upgrade -yqq && \
-    apt-get install -yqq --no-install-recommends \ 
+RUN apk add --no-cache \
     wget \
     libczmq-dev \
     curl \
@@ -30,7 +28,7 @@ RUN apt-get update -yqq && \
     g++ \
     vim \
     locales \
-    && apt-get clean
+    && :
 
 # install packages specifically related to network troubleshooting
 RUN apk add --no-cache \
