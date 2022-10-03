@@ -62,7 +62,7 @@ RUN wget https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_
 COPY constraints.txt /opt/app/
 RUN pip3 install apache-airflow[celery, docker] --no-cache-dir -r /opt/app/constraints.txt
 
-# install app into the appropriate place
+# install app into the app-propriate place :D
 COPY . /opt/app/
 
-ENTRYPOINT ["/opt/app/entrypoint"]
+ENTRYPOINT ["/opt/app/entrypoint.py"]
