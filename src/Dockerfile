@@ -9,8 +9,13 @@ RUN apk add --no-cache \
 # Install Airflow dependencies and tools
 RUN apk add --no-cache \
     wget \
+    gcc \
+    g++ \
+    zlib-dev \
+    libffi-dev \
+    openssl-dev \
+    musl-dev \
     libczmq-dev \
-    curl \
     libssl-dev \
     git \
     inetutils-telnet \
@@ -20,12 +25,9 @@ RUN apk add --no-cache \
     libffi-dev libpq-dev \
     freetds-bin build-essential \
     default-libmysqlclient-dev \
-    apt-utils \
     rsync \
     zip \
     unzip \
-    gcc \
-    g++ \
     vim \
     locales \
     && :
