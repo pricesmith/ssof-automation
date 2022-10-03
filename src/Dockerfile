@@ -26,21 +26,14 @@ RUN apk add --no-cache \
     libffi-dev \
     openssl-dev \
     musl-dev \
-    libczmq-dev \
-    libssl-dev \
     git \
     inetutils-telnet \
-    bind9utils freetds-dev \
-    libkrb5-dev \
-    libsasl2-dev \
-    libffi-dev libpq-dev \
-    freetds-bin build-essential \
-    default-libmysqlclient-dev \
+    freetds-dev \
+	libpq-dev \
     rsync \
     zip \
     unzip \
     vim \
-    locales \
     && :
 
 # install packages specifically related to network troubleshooting
