@@ -17,8 +17,6 @@ RUN apk add --no-cache \
 	python3-dev \
 	&& :
 
-<<<<<<< HEAD
-=======
 # Install Airflow dependencies and tools
 RUN apk add --no-cache \
     wget \
@@ -45,7 +43,6 @@ RUN apk add --no-cache \
     locales \
     && :
 
->>>>>>> ef4e897f40d15fd5df2a45965b690cf51428e7d2
 # install packages specifically related to network troubleshooting
 RUN apk add --no-cache \
 	-X http://dl-cdn.alpinelinux.org/alpine/edge/main \
