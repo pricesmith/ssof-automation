@@ -29,15 +29,53 @@ class NVD(object):
     class CPE(object):
         class Search(object):
             def __init__(self):
-                self.base_q      = f'{CPES_BASE_URL}{DEFAULT_VERSION}'
-                self.cpe_name_id = 'cpeNameId'
+                self.q = f'{CPES_BASE_URL}{DEFAULT_VERSION}'
+
+                self.cpe_name_id                = 'cpeNameId'
+                self.cpe_match_string           = 'cpeMatchString'
+                self.cpe_keyword_search         = 'keywordSearch'
+                self.cpe_keyword_exact_match    = 'keywordExactMatch'
 
             def by_cpe_name_id(self, cpe_name_id):
-                q = f'{self.base_q}?{self.cpe_name_id}={cpe_name_id}'
+                self.q += f'?{self.cpe_name_id}={cpe_name_id}'
                 
+            def by_cpe_match_string(self, cpe_match_string):
+                self.q = f'?{self.cpe_match_string}={cpe_match_string}'
 
-            def by_cpe_match_string():
+            def by_keyword(self, keyword):
+                self.q = f'?{self.cpe_keyword_search}={keyword}'
+
+            def by_keyword_exact_match(self, keyword):
+                self.q = f'?{self.cpe_keyword_search}={keyword}&{self.cpe_keyword_exact_match}'
+
+            def set_search_params():
                 pass
+
+    class CVE(object):
+        class Search(object):
+            def __init__(self):
+                self.q = f'{CPES_BASE_URL}{DEFAULT_VERSION}'
+
+                self.cpe_name                   = 'cpeName'
+                self.cve_id                     = 'cveId'
+                self.cpe_keyword_search         = 'keywordSearch'
+                self.cpe_keyword_exact_match    = 'keywordExactMatch'
+
+            def by_cpe_name_id(self, cpe_name_id):
+                self.q += f'?{self.cpe_name_id}={cpe_name_id}'
+                
+            def by_cpe_match_string(self, cpe_match_string):
+                self.q = f'?{self.cpe_match_string}={cpe_match_string}'
+
+            def by_keyword(self, keyword):
+                self.q = f'?{self.cpe_keyword_search}={keyword}'
+
+            def by_keyword_exact_match(self, keyword):
+                self.q = f'?{self.cpe_keyword_search}={keyword}&{self.cpe_keyword_exact_match}'
+
+            def set_search_params():
+                pass
+
 
     def _wrap_query_key(query_key):
         return f'?{query_key}='
