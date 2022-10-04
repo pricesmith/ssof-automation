@@ -13,19 +13,6 @@ DEFAULT_VERSION = '2.0'
 DEFAULT_FORMAT  = 'json'
 
 class NVD(object):
-    def __init__(self):
-        self.cpe_name               = 'cpeName'
-        self.cve_id                 = 'cveID'
-        self.cvss_v2_metrics        = 'cvssV2Metrics'
-        self.cvss_vs_severity       = 'cvssV2Severity'
-        self.keyword_search         = 'keyword'
-        self.last_mod_start_date    = 'lastModStartDate'
-        self.last_mod_end_date      = 'lastModEndDate'
-        self.keyword_exact_match    = 'keywordExactMatch'
-        self.virtual_match_string   = 'virtualMatchString'
-        self.start_index            = 'startIndex'
-        self.results_per_page       = 'resultsPerPage'
-
     class CPE(object):
         class Search(object):
             def __init__(self):
@@ -53,9 +40,8 @@ class NVD(object):
 
     class CVE(object):
         def __init__(self):
-            self.query = f'{CPES_BASE_URL}{DEFAULT_VERSION}'
-
-            self.cve_query_terms = {
+            self.cve_query          = f'{CVES_BASE_URL}{DEFAULT_VERSION}'
+            self.cve_query_terms    = {
                 'cpe_name'               : 'cpeName',
                 'cve_id'                 : 'cveId',
                 'cwe_id'                 : 'cweId',
@@ -80,32 +66,49 @@ class NVD(object):
                 'start_index'            : 'startIndex',
             }
 
-        def search(
+        def search_cves(
             self,
             cpe_name: str               = None,
             cve_id: str                 = None,
-            cwe_id: str                 = None,
+            cwe_id: str                 = None, # Common Weakness Enumeration
             cvss_v2_metrics: str        = None,
             cvss_v3_metrics: str        = None,
             cvss_v2_severity: str       = None,
             cvss_v3_severity: str       = None,
-            has_cert_alerts: bool       = None,
-            has_cert_notes: bool        = None,
-            has_kev: bool               = None,
-            has_oval: bool              = None,
-            is_vulnerable: bool         = None, # If filtering by isVulnerable, cpeName is REQUIRED. Please note, virtualMatchString is not accepted in requests that use isVulnerable.
+            has_cert_alerts: bool       = None, # This parameter returns the CVE that contain a Technical Alert from US-CERT. 
+            has_cert_notes: bool        = None, # This parameter returns the CVE that contain a Vulnerability Note from CERT/CC. 
+            has_kev: bool               = None, # This parameter returns the CVE that appear in CISA's Known Exploited Vulnerabilities (KEV) Catalog. 
+            has_oval: bool              = None, # This parameter returns the CVE that contain information from MITRE's Open Vulnerability and Assessment Language (OVAL) before this transitioned to the Center for Internet Security (CIS).
+            is_vulnerable: bool         = None, # This parameter returns only CVE associated with a specific CPE, where the CPE is also considered vulnerable. If filtering by isVulnerable, cpeName is REQUIRED. Please note, virtualMatchString is not accepted in requests that use isVulnerable.
             keyword_search: str         = None, # Please note, multiple {keywords} function like an 'AND' statement. This returns results where all keywords exist somewhere in the current description, though not necessarily together.
-            keyword_exact_match: bool   = None,
-            last_mod_start_date: str    = None,
-            last_mod_end_date: str      = None,
-            pub_start_date: str         = None,
-            pub_end_date: str           = None,
+            keyword_exact_match: bool   = None, # By default, keywordSearch returns any CVE where a word or phrase is found in the current description. If filtering by keywordExactMatch, keywordSearch is REQUIRED. 
+            last_mod_start_date: str    = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+            last_mod_end_date: str      = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+            pub_start_date: str         = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+            pub_end_date: str           = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
             results_per_page: int       = None,
             start_index: int            = None,
         ):
-            kwargs = locals()
-            query_params = []
 
+            kwargs = locals()
+
+            # Enforce or work around NVD API rules: # TODO: Check date lengths
+            if kwargs['keyword_exact_match'] and not kwargs['keyword_search']:
+                pass # return err | or apply default
+            if kwargs['cvss_v2_metrics'] and kwargs['cvss_v3_metrics']:
+                pass # return err | or apply default
+            if kwargs['cvss_v2_severity'] and kwargs['cvss_v3_severity']:
+                pass # return err | or apply default
+            if kwargs['last_mod_start_date'] or kwargs['last_mod_end_date']:
+                if not kwargs['last_mod_start_date'] or not kwargs['last_mod_end_date']:
+                    pass # return err | or apply default
+            if kwargs['pub_start_date'] or kwargs['pub_mod_end_date']:
+                if not kwargs['pub_start_date'] or not kwargs['pub_end_date'] or \
+                kwargs['last_mod_start_date'] or not kwargs['last_mod_end_date']:
+                    pass # return err | or apply default
+
+            # Prep params 
+            query_params = []
             for key in kwargs:
                 if kwargs[key]:
                     if type(kwargs[key]) is str or int:
