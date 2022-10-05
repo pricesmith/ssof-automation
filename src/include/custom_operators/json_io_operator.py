@@ -8,9 +8,9 @@ Operate on multi-worker Airflow deployments
 EXAMPLE USAGE:
 # from airflow import DAG
 # from airflow.operators import PythonOperator
-# from inclue.custom_operators.json_io_operator import JsonIoOperator
+# from include.custom_operators.json_io_operator import JsonIoOperator
 
-# dag = dag(...)
+# dag = DAG(...)
 
 # input_task_id = ‘python_task’
 

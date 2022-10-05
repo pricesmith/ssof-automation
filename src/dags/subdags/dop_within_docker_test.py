@@ -2,7 +2,7 @@ from airflow                    import DAG
 from airflow.providers.docker   import DockerOperator
 from airflow.utils.dates        import days_ago
 
-from datetime               import timedelta
+from datetime                   import timedelta
 
 default_args = {
     'owner'             : 'airflow',
@@ -18,9 +18,9 @@ default_args = {
 
 dag = DAG(
     'dop_within_docker_test',
-    default_args=default_args,
-    schedule_interval=None,
-    start_date=days_ago(2),
+    default_args        = default_args,
+    schedule_interval   = None,
+    start_date          = days_ago(2),
 )
 
 dop = DockerOperator(
