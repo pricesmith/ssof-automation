@@ -98,6 +98,7 @@ class NVD(object):
     ):
 
         kwargs = locals()
+        print(kwargs)
 
         # Enforce or work around NVD API rules: # TODO: Check date lengths
         if kwargs['keyword_exact_match'] and not kwargs['keyword_search']:
@@ -109,7 +110,7 @@ class NVD(object):
         if kwargs['last_mod_start_date'] or kwargs['last_mod_end_date']:
             if not kwargs['last_mod_start_date'] or not kwargs['last_mod_end_date']:
                 pass # return err | or apply default
-        if kwargs['pub_start_date'] or kwargs['pub_mod_end_date']:
+        if kwargs['pub_start_date'] or kwargs['pub_end_date']:
             if not kwargs['pub_start_date'] or not kwargs['pub_end_date'] or \
             kwargs['last_mod_start_date'] or not kwargs['last_mod_end_date']:
                 pass # return err | or apply default
@@ -124,9 +125,12 @@ class NVD(object):
                 if type(kwargs[key]) is bool and kwargs[key] is True:
                     query_params.append(f'{self.cve_query_terms[key]}')
         
+        # Build params
         query_params_str = '?'
         for param in query_params:
             query_params_str += param
+
+        return self.cve_base_url + query_params_str 
   
     def search_cpes(
         self,
@@ -227,3 +231,7 @@ class NVD(object):
     # return self.base_url + self.cpe_name_query
 
     # def cves_by_keyword_search(self):
+
+
+client = NVD()
+client.search_cves()
