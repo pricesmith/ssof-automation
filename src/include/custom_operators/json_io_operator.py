@@ -4,6 +4,32 @@ Supply JSON input into the Docker Container
 Extract file outputs (XLSX, CSV, etc) from within the Docker Container
 
 Operate on multi-worker Airflow deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+EXAMPLE USAGE:
+# from airflow import DAG
+# from airflow.operators import PythonOperator
+# from inclue.custom_operators.json_io_operator import JsonIoOperator
+
+# dag = dag(...)
+
+# input_task_id = ‘python_task’
+
+# input_task = PythonOperator(
+#     task_id = input_task_id,
+#     …,
+# )
+
+# dockerTask = JsonIoOperator(
+#     docker_url            = ’unix:///var/run/docker.sock’,
+#     image                 = ...,
+#     volumes               = ...,
+#     environment           = ...,
+#     task_id               = ’docker_task’,
+#     dag                   = dag,
+#     output_dir_path       = ...,          # location within container to which your output will be written
+#     shared_dir_path       = ...,          # your NFS dir or S3 location
+#     input_task_id         = input_task_id,
+# )
 """
 import os
 import json
@@ -31,7 +57,7 @@ class JsonIoOperator(DockerOperator):
         
     def execute_to_temp_nfs(self, context):
         # pass input logic goes here
-        input = self.xcom_pull(task_ids     = self.input_task_id, context = context)
+        input = self.xcom_pull(task_ids = self.input_task_id, context = context)
         self.environment['CONTAINER_INPUT'] = json.dumps(input)
 
         # setup output logic goes here
