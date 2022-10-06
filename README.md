@@ -6,6 +6,12 @@ Apache Airflow serves a multitude of purposes. Here, I explore its different fea
 
 ## DAGs, Subdags, Workflows, and Tasks
 
+## Clients
+
+### NVD Client
+
+- impl architecture is restricted by use case knowledge (i.e. how it will be used in automation (e.g. how info will be passed in)) and knowledge of python. 
+
 ## Codebase Background
 
 This codebase began with a hyper-focus on one particular use case I found interesting-- automating vulnerability updates, checking against existing products and services, and adding to a db. Additionally, I wanted to explore adding a particular interest of mine called RDF Stores. RDF Stores are a way to semantically store and query data in a remarkably flexible way. However, with this entire approach, I found that both some of my domain knowledge needed guidance and the vulnerability apis of choice are time intensive to fully implement-- PLUS RDF setup (example ontology creation, and triple store init, THEN setting up an api).
