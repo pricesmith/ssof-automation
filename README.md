@@ -2,7 +2,11 @@
 
 ## Overview
 
-Airflow serves a multitude of purposes. Here, I explore different usecases in addition to different styles of airflow implementations while ideally solidifying my understanding of the toolset and its extensibility.
+Apache Airflow serves a multitude of purposes. Here, I explore its different features (old and new), usecases, and implementation styles in order to help cement my understanding and familiarity of the toolset and its extensibility.
+
+## DAGs, Subdags, Workflows, and Tasks
+
+## Codebase Background
 
 This codebase began with a hyper-focus on one particular use case I found interesting-- automating vulnerability updates, checking against existing products and services, and adding to a db. Additionally, I wanted to explore adding a particular interest of mine called RDF Stores. RDF Stores are a way to semantically store and query data in a remarkably flexible way. However, with this entire approach, I found that both some of my domain knowledge needed guidance and the vulnerability apis of choice are time intensive to fully implement-- PLUS RDF setup (example ontology creation, and triple store init, THEN setting up an api).
 
