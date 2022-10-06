@@ -73,28 +73,28 @@ class NVD(object):
 
     def search_cves(
         self,
-        cpe_name: str               = None,
-        cve_id: str                 = None,
-        cwe_id: str                 = None, # Common Weakness Enumeration
-        cvss_v2_metrics: str        = None,
-        cvss_v3_metrics: str        = None,
-        cvss_v2_severity: str       = None,
-        cvss_v3_severity: str       = None,
-        source_identifier: str      = None, # 
-        virtual_match_string: str   = None, # 
-        has_cert_alerts: bool       = None, # This parameter returns the CVE that contain a Technical Alert from US-CERT. 
-        has_cert_notes: bool        = None, # This parameter returns the CVE that contain a Vulnerability Note from CERT/CC. 
-        has_kev: bool               = None, # This parameter returns the CVE that appear in CISA's Known Exploited Vulnerabilities (KEV) Catalog. 
-        has_oval: bool              = None, # This parameter returns the CVE that contain information from MITRE's Open Vulnerability and Assessment Language (OVAL) before this transitioned to the Center for Internet Security (CIS).
-        is_vulnerable: bool         = None, # This parameter returns only CVE associated with a specific CPE, where the CPE is also considered vulnerable. If filtering by isVulnerable, cpeName is REQUIRED. Please note, virtualMatchString is not accepted in requests that use isVulnerable.
-        keyword_search: str         = None, # Please note, multiple {keywords} function like an 'AND' statement. This returns results where all keywords exist somewhere in the current description, though not necessarily together.
-        keyword_exact_match: bool   = None, # By default, keywordSearch returns any CVE where a word or phrase is found in the current description. If filtering by keywordExactMatch, keywordSearch is REQUIRED. 
-        last_mod_start_date: str    = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
-        last_mod_end_date: str      = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
-        pub_start_date: str         = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
-        pub_end_date: str           = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
-        results_per_page: int       = None,
-        start_index: int            = None,
+        cpe_name: str | None                = None,
+        cve_id: str | None                  = None,
+        cwe_id: str | None                  = None, # Common Weakness Enumeration
+        cvss_v2_metrics: str | None         = None,
+        cvss_v3_metrics: str | None         = None,
+        cvss_v2_severity: str | None        = None,
+        cvss_v3_severity: str | None        = None,
+        source_identifier: str | None       = None, # 
+        virtual_match_string: str | None    = None, # 
+        has_cert_alerts: bool | None        = None, # This parameter returns the CVE that contain a Technical Alert from US-CERT. 
+        has_cert_notes: bool | None         = None, # This parameter returns the CVE that contain a Vulnerability Note from CERT/CC. 
+        has_kev: bool | None                = None, # This parameter returns the CVE that appear in CISA's Known Exploited Vulnerabilities (KEV) Catalog. 
+        has_oval: bool | None               = None, # This parameter returns the CVE that contain information from MITRE's Open Vulnerability and Assessment Language (OVAL) before this transitioned to the Center for Internet Security (CIS).
+        is_vulnerable: bool | None          = None, # This parameter returns only CVE associated with a specific CPE, where the CPE is also considered vulnerable. If filtering by isVulnerable, cpeName is REQUIRED. Please note, virtualMatchString is not accepted in requests that use isVulnerable.
+        keyword_search: str | None          = None, # Please note, multiple {keywords} function like an 'AND' statement. This returns results where all keywords exist somewhere in the current description, though not necessarily together.
+        keyword_exact_match: bool | None    = None, # By default, keywordSearch returns any CVE where a word or phrase is found in the current description. If filtering by keywordExactMatch, keywordSearch is REQUIRED. 
+        last_mod_start_date: str | None     = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+        last_mod_end_date: str | None       = None, # If filtering by the last modified date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+        pub_start_date: str | None          = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+        pub_end_date: str | None            = None, # These parameters return only the CVEs that were added to the NVD (i.e., published) during the specified period. If filtering by the published date, both lastModStartDate and lastModEndDate are REQUIRED. The maximum allowable range when using any date range parameters is 120 consecutive days.
+        results_per_page: int | None        = None,
+        start_index: int | None             = None,
     ):
 
         kwargs = locals()
