@@ -8,6 +8,10 @@ Apache Airflow serves a multitude of purposes. Here, I explore its different fea
 
 ## Clients
 
+## What I would do differently... (if given this time again...)
+
+## Where I feel I can improve...
+
 ## Overall Experience
 
 ### Difficulties in learning with assumed use cases. 
