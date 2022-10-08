@@ -8,6 +8,10 @@ Apache Airflow serves a multitude of purposes. Here, I explore its different fea
 
 ## Clients
 
+## Overall Experience
+
+### Difficulties in learning with assumed use cases. 
+
 ### NVD Client
 
 - impl architecture is restricted by use case knowledge (i.e. how it will be used in automation (e.g. how info will be passed in)) and knowledge of python. 
