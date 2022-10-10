@@ -8,9 +8,7 @@ Apache Airflow serves a multitude of purposes. Here, I explore and experiment wi
 
 The architecture, language, and modularity of Airflow and its components have become strikingly more intuitive to me. With the time, effort, and dedication willing to be put into becoming a valuable asset to the SS&C team, a strong growth-mindset, and an eager ears and eyes for feedback and guidance, I'm far more than confident that my familiarity and efficiency with Airflow and internal tooling of the like will continue to grow rapidly. 
 
-I feel that, if given a task and some direction, I feel that I'm aware of what I don't know while knowing how to find the answers, whether through a few quick searches or by asking a colleague. I am always willing to ask a colleague for guidance and have enough effort and enthusiasm to give to become a 
-
-I can fill in most of my gaps in knowledge and experience. With direction and internal feedback, I'm far more than confident in my ability to claim proper ownership of these tools and skillsets in minimal time. I am strongly motivated and willing to put in the time and effort to become a powerful contributer to the SS&C team My interest in the tooling, its modularity, and its applications is high and only growing, and my willingness to put in the time and elbow-grease to be a powerful contributer to the SS&C team 
+I feel that I'm aware of what I don't know while knowing how to find the answers, whether through a few quick searches or by asking a colleague. I am always willing to ask a colleague for guidance and have enough effort and enthusiasm to give to become a 
 
 ## What I Would Do Differently
 
