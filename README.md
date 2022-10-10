@@ -4,19 +4,21 @@
 
 Apache Airflow serves a multitude of purposes. Here, I explore and experiment with its different features (old and new), usecases, and implementation styles in order to help cement my understanding and familiarity of the toolset and its extensibility. 
 
+## What I've Learned and Where I Am Now
+
+The architecture, language, and modularity of Airflow and its components have become strikingly more intuitive to me. With the time, effort, and dedication willing to be put into becoming a valuable asset to the SS&C team, a strong growth-mindset, and an eager ears and eyes for feedback and guidance, I'm far more than confident that my familiarity and efficiency with Airflow and internal tooling of the like will continue to grow rapidly. 
+
+I feel that, if given a task and some direction, I feel that I'm aware of what I don't know while knowing how to find the answers, whether through a few quick searches or by asking a colleague. I am always willing to ask a colleague for guidance and have enough effort and enthusiasm to give to become a 
+
+I can fill in most of my gaps in knowledge and experience. With direction and internal feedback, I'm far more than confident in my ability to claim proper ownership of these tools and skillsets in minimal time. I am strongly motivated and willing to put in the time and effort to become a powerful contributer to the SS&C team My interest in the tooling, its modularity, and its applications is high and only growing, and my willingness to put in the time and elbow-grease to be a powerful contributer to the SS&C team 
+
 ## What I Would Do Differently
 
 The start of this learning process began with a hyper-focus on one particular use case I found interesting-- automating vulnerability updates, checking against existing products and services, and adding to a db. However, I felt compelled to use this to additionally explore further a particular interest of mine called RDF Stores. RDF Stores are a way to semantically store and query data in a remarkably flexible way. Though, with these combined domains, both of which I am learning (and would like to continue learning), I found that embedding a technology you would like to learn inside of learning about another technology can be an intense and somewhat disorienting endeavor. I've been told that I'm a big-picture person, and I got lost in a vague larger picture. 
 
 I believe I also misprioritized important but auxillary libraries and implementation details. I wanted to learn the ins-and-outs of Alpine, understand why it's considered so secure, and push through building made-from-scratch images for Airflow all while considering network trouble-shooting within those containers, CI/CD, and other tasks that, however easy or achievable, were simply contributing to the fog of a lack of direction.
 
-If done again, I would start as small as possible and build-up, rather than conjure up a grandiose usecase to work through in just a week. All of that being said! I learned a whole lot.
-
-## What I've Learned and Where I Am Now
-
-The architecture, language, and modularity of Airflow and DockerOperators are becoming increasingly intuitive to me. I feel I'm aware of what I don't know while knowing how to find the answers, whether through a few quick searches or by asking a colleague. I am always willing to ask a colleague for guidance and have enough effort and enthusiasm to give to become a 
-
-I can fill in most of my gaps in knowledge and experience. With direction and internal feedback, I'm far more than confident in my ability to claim proper ownership of these tools and skillsets in minimal time. I am strongly motivated and willing to put in the time and effort to become a powerful contributer to the SS&C team My interest in the tooling, its modularity, and its applications is high and only growing, and my willingness to put in the time and elbow-grease to be a powerful contributer to the SS&C team  
+If done again, I would start as small as possible and build-up, rather than conjure up a grandiose usecase to work through in just a week. All of that being said! I learned a whole lot. 
 
 ## What I would do differently... (if given this time again...)
 
